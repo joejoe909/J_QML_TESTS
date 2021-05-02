@@ -1,12 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 
-/*
-  Rectangle
-  https://doc.qt.io/qt-5/qml-qtquick-rectangle.html
-  Its an Item
-  There is no circle!
-*/
+//https://doc.qt.io/qt-5/qml-qtquick-text.html
 
 Window {
     visible: true
@@ -14,29 +9,27 @@ Window {
     height: 480
     title: qsTr("Hello World")
 
-    Rectangle {
-        id: myItem
+
+    Text {
+        id: myText
+        text: qsTr("This is a test")
         anchors.centerIn: parent
-        color: "red"
-        width: 200
-        height: 200
-        visible: true
+        font.pointSize: 35
+        //font.bold: true //
+        font.italic: true //
+        //color: "red"
+        //linkColor: "blue"
 
-        border.color: "#000000"
-        border.width: 1
 
-        radius: 0
+//        onLinkHovered: {
+//            console.log("Hover: " + link)
+//            if(link) {
+//                myText.font.bold = true
+//            } else {
+//                myText.font.bold = false
+//            }
+//        }
 
-        //Gradients are super easy!
-        //https://doc.qt.io/qt-5/qml-qtquick-gradientstop.html
-
-        gradient: Gradient {
-            GradientStop {position: 0.0; color: "red"}
-            GradientStop {position: 0.25; color: "blue"}
-            GradientStop{position: 0.5; color: "orange"}
-            GradientStop{position: 0.75; color: "green"}
-            GradientStop{position: 1.0; color: "pink"}
-        }
+//        onLinkActivated: Qt.openUrlExternally(link)
     }
-
 }
